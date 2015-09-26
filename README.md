@@ -29,3 +29,6 @@ docker run -id -p 8080:8080 --name stanbol -t mxr576/stanbol
 **Available environment variables:**
 
  - JAVA_OPTS - Settings for the JAVA run time environemt. Default: `-Xmx1g -XX:MaxPermSize=256m` . Which is the recommended settings from the [Stanbol tutorial](https://stanbol.apache.org/docs/trunk/tutorial.html).
+
+### Licence
+[MIT](https://tldrlegal.com/license/mit-license)
