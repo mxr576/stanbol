@@ -22,7 +22,7 @@ RUN mkdir -p /opt && \
 # Create directory for log files.
 RUN mkdir -p /var/log/supervisord
 
-# Add supervisored.conf.
+# Add supervisord.conf.
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 8080

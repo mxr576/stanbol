@@ -1,0 +1,15 @@
+stanbol:
+  image: mxr576/stanbol
+  hostname: stanbol
+  restart: always
+  environment:
+    - JAVA_OPTS=-Xmx1g -XX:MaxPermSize=256m
+  ports:
+    - "8080:8080"
+  volumes_from:
+    - stanbol_data
+stanbol_data:
+  image: mxr576/stanbol
+  command: echo "Data only container for the Apache Stanbol container."
+  volumes:
+    - /var/log/supervisord
