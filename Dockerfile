@@ -20,19 +20,13 @@ RUN mkdir -p /opt && \
   wget -nv --output-document=/opt/stanbol-launcher.jar http://dev.iks-project.eu/downloads/stanbol-launchers/0.12.0/org.apache.stanbol.launchers.full-0.12.0.jar
 
 # Create directory for log files.
-RUN mkdir -p /var/supervisord
+RUN mkdir -p /var/log/supervisord
 
 # Add supervisored.conf.
 ADD supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-# Add start script.
-ADD run.sh /run.sh
-
-# Add executable right to the file.
-RUN chmod +x /run.sh
-
 EXPOSE 8080
 
-VOLUME ["/var/supervisord"]
+VOLUME ["/var/log/supervisord"]
 
 CMD ["/usr/bin/supervisord"]
